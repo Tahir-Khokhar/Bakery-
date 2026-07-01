@@ -22,7 +22,8 @@ def home(request):
         'categories': categories,
         'new_products': new_products,
     }
-    return render(request, 'bakery/home.html', context)
+    return render(request, 'bakery/home.html', context)  # Uses render() to return the HTML response
+
 
 # Product Views
 def product_list(request):
