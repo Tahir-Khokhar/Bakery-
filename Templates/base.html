@@ -40,8 +40,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'Shop:home' %}">
-                <i class="fas fa-bread-slice"></i> Bakery Shop
+<a class="navbar-brand" href="{% url 'home' %}">
+                <i class="fas fa-bread-slice" aria-hidden="true"></i> Bakery Shop
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -49,12 +49,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Shop:product_list' %}">Products</a>
+<a class="nav-link" href="{% url 'product_list' %}">Products</a>
                     </li>
 
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Shop:order_history' %}">My Orders</a>
+<a class="nav-link" href="{% url 'order_history' %}">My Orders</a>
                     </li>
 
                     {% endif %}
@@ -62,9 +62,9 @@
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'bakery:view_cart' %}">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="badge bg-primary cart-badge">
+                        <a class="nav-link" href="{% url 'view_cart' %}">
+                            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                            <span class="badge bg-primary cart-badge" aria-label="Items in cart">
                                 {{ request.session.cart|length }}
                             </span>
                         </a>
@@ -74,9 +74,9 @@
                             <i class="fas fa-user"></i> {{ user.username }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'Shop:profile' %}">Profile</a></li>
+<a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
 
-                            <li><a class="dropdown-item" href="{% url 'Shop:order_history' %}">Orders</a></li>
+<li><a class="dropdown-item" href="{% url 'order_history' %}">Orders</a></li>
 
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
@@ -87,7 +87,7 @@
                         <a class="nav-link" href="{% url 'login' %}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'bakery:register' %}">Register</a>
+<a class="nav-link" href="{% url 'register' %}">Register</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -120,7 +120,7 @@
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="{% url 'bakery:product_list' %}">Products</a></li>
+<li><a href="{% url 'product_list' %}">Products</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
